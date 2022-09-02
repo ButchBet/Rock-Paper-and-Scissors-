@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
 
-:host {
+:root {
     --background0: #D9D9D9;
     --background1: #DBD4D4;
     --background2: #C1CBC0;
@@ -17,7 +17,8 @@
 /* 1 */
 body,
 .settingAndQuestionsPanel,
-.settingAndQuestionsPanel__exit {
+.settingAndQuestionsPanel__exit,
+.score {
     display: flex;
 }
 
@@ -31,10 +32,8 @@ body,
     flex-wrap: wrap;
 }
 
-.settingAndQuestionsPanel__exit {
-    justify-content: center;
-}
-
+.settingAndQuestionsPanel__exit,
+.score,
 body,
 .settingAndQuestionsPanel,
 .settingAndQuestionsPanel__exit {
@@ -44,6 +43,10 @@ body,
 body,
 .settingAndQuestionsPanel {
     align-content: center;
+}
+
+.score {
+    align-items: center;
 }
 
 body {
@@ -107,6 +110,12 @@ body {
     padding: 8px 34px;
 }
 
+.score {
+    width: 270px;
+    height: 140px;
+    gap: 30px;
+}
+
 
 /* 3 */
 html {
@@ -126,6 +135,11 @@ body {
     text-align: justify;
 }
 
+.score__item {
+    font-size: 10rem;
+    font-weight: 700;
+}
+
 /* 4 */
 .settingAndQuestionsPanel__exit {
     background: red;
@@ -139,6 +153,19 @@ body {
 .settingAndQuestionsPanel__list {
     list-style: none;
     text-align: center;
+}
+
+.score {
+    background: var(--background1);
+    border-radius: 4px;
+}
+
+.score {
+    box-shadow: .3px 1.3px 1px black;
+}
+
+.score__item {
+    color: white;
 }
 
 /* 5 */

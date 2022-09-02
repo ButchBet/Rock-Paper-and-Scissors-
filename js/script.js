@@ -56,14 +56,12 @@ const settingsPanel = document.getElementById('settingsPanel');
 const closeSettingAndQuestions = document.getElementById('closeSettingAndQuestions');
 
 openSettingAndQuestions.addEventListener('click', (e) => {
-    openSettingAndQuestions.classList.add('hidden'); // Hide the setthing and questions icon
     settingsPanel.classList.remove('hidden'); // Show up the settings panel
 });
 
 
 closeSettingAndQuestions.addEventListener('click', (e) => {
     settingsPanel.classList.add('hidden'); // Hide the panel
-    openSettingAndQuestions.classList.remove('hidden'); // Show up the setthing and questions icon
 });
 
 // Script to show up the content of the about it item
@@ -79,9 +77,11 @@ const mute = document.getElementById('mute');
 
 mute.addEventListener('click', (e) => {
     if(mute.classList.contains('mute')) {
+        mute.textContent = 'Mute';
         alert('unmuted');
         mute.classList.remove('mute');
     } else {
+        mute.textContent = 'Unmute';
         alert('muted');
         mute.classList.add('mute');
     }
