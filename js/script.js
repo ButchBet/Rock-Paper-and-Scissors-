@@ -61,3 +61,11 @@ closeSettingAndQuestions.addEventListener('click', (e) => {
     settingsPanel.classList.add('hidden'); // Hide the panel
     openSettingAndQuestions.classList.remove('hidden'); // Show up the setthing and questions icon
 });
+
+// Script to show up the content of the about it item
+const aboutIt = document.getElementById('aboutIt');
+const aboutItDescription = document.getElementById('aboutItDescription');
+
+aboutIt.addEventListener('click', (e) => {
+    aboutItDescription.classList.toggle('hidden');
+});

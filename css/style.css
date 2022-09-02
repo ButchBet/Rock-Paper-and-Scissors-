@@ -56,6 +56,10 @@ body {
     position: absolute;
 }
 
+.settingAndQuestionsPanel__aboutIt {
+    display: block;
+}
+
 /* 2 */
 * {
     padding: 0;
@@ -99,6 +103,10 @@ body {
     height: 100%;
 }
 
+.settingAndQuestionsPanel__aboutIt {
+    padding: 8px 34px;
+}
+
 
 /* 3 */
 html {
@@ -111,6 +119,11 @@ body {
 
 .settingAndQuestionsPanel__element {
     font-size: 1.6rem;
+}
+
+.settingAndQuestionsPanel__aboutIt {
+    font-size: 1.1rem;
+    text-align: justify;
 }
 
 /* 4 */
