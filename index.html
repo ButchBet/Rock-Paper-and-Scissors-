@@ -12,18 +12,31 @@
     <link rel="stylesheet" href="./css/tablet.css" media="screen and (min-width: 600px)">
     <link rel="stylesheet" href="./css/desktop.css" media="screen and (min-width: 800px)">
 
-    <!-- <script src="./js/script.js" defer type="module"></script> -->
+    <script src="./js/script.js" defer type="module"></script>
 </head>
 <body>
-    <figure class="settingAndQuestions hidden">
+    <figure class="settingAndQuestions" id="openSettingAndQuestions">
         <img src="./assets/online-support.png" alt="Setting and questings icon" class="settingAndQuestions__img">
-
     </figure>
     
-    <div class="settingAndQuestionsPanel">
-        <figure class="settingAndQuestionsPanel__exit">
+    <div class="settingAndQuestionsPanel hidden" id="settingsPanel">
+        <figure class="settingAndQuestionsPanel__exit" id="closeSettingAndQuestions">
             <img src="./assets/close.png" alt="Close 'X' icon" class="settingAndQuestionsPanel__img">
         </figure>
+
+        <ul class="settingAndQuestionsPanel__list">
+            <li class="settingAndQuestionsPanel__element" id="aboutIt">
+                About it
+            </li>
+
+            <li class="settingAndQuestionsPanel__element false" id="pause">
+                Pause
+            </li>
+
+            <li class="settingAndQuestionsPanel__element" id="restart">
+                Restart
+            </li>
+        </ul>
     </div>
 
 </body>

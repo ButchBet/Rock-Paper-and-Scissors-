@@ -1,17 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
 :host {
     --background0: #D9D9D9;
     --background1: #DBD4D4;
     --background2: #C1CBC0;
-}
-
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
-html {
-    font-size: 62.5% /* 1rem = 10px */
 }
 
 /* 
@@ -65,6 +57,12 @@ body {
 }
 
 /* 2 */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -103,6 +101,17 @@ body {
 
 
 /* 3 */
+html {
+    font-size: 62.5% /* 1rem = 10px */
+}
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.settingAndQuestionsPanel__element {
+    font-size: 1.6rem;
+}
 
 /* 4 */
 .settingAndQuestionsPanel__exit {
@@ -113,10 +122,26 @@ body {
 body {
     background: var(--background0);
 }
+
+.settingAndQuestionsPanel__list {
+    list-style: none;
+    text-align: center;
+}
+
 /* 5 */
 .settingAndQuestions,
-.settingAndQuestionsPanel__exit {
+.settingAndQuestionsPanel__exit,
+.settingAndQuestionsPanel__element {
     cursor: pointer;
+}
+
+.settingAndQuestions:active,
+.settingAndQuestionsPanel__exit:active {
+    transform: scale(.9);
+}
+
+.settingAndQuestionsPanel__element:hover {
+    text-decoration: underline;
 }
 
 .hidden {
