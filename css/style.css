@@ -34,17 +34,17 @@ body,
 
 .settingAndQuestionsPanel__exit,
 .score,
-body,
 .settingAndQuestionsPanel,
 .settingAndQuestionsPanel__exit {
     justify-content: center;
 }
 
-body,
-.settingAndQuestionsPanel {
-    align-content: center;
+body {
+    justify-content: space-evenly;
 }
 
+body,
+.settingAndQuestionsPanel,
 .score {
     align-items: center;
 }
@@ -116,6 +116,17 @@ body {
     gap: 30px;
 }
 
+.result {
+    width: 68px;
+    height: 68px;
+
+}
+
+.result__img {
+    width: 100%;
+    height: 100%;
+}
+
 
 /* 3 */
 html {
@@ -160,12 +171,18 @@ body {
     border-radius: 4px;
 }
 
-.score {
+.score,
+.result {
     box-shadow: .3px 1.3px 1px black;
 }
 
 .score__item {
     color: white;
+}
+
+.result {
+    border-radius: 100%;
+    background: var(--background1);
 }
 
 /* 5 */
