@@ -1,3 +1,7 @@
+const backgroundMusic = new Audio('../audio/rockpaperscissors.mp3');
+
+// Script to validate the background sound
+
 // const options = ['rock', 'paper', 'scissors']; 
 
 // function checkWiner(user = null, cpu = null) {
@@ -68,4 +72,24 @@ const aboutItDescription = document.getElementById('aboutItDescription');
 
 aboutIt.addEventListener('click', (e) => {
     aboutItDescription.classList.toggle('hidden');
+});
+
+// Script to mute and unmute the sound 
+const mute = document.getElementById('mute');
+
+mute.addEventListener('click', (e) => {
+    if(mute.classList.contains('mute')) {
+        alert('unmuted');
+        mute.classList.remove('mute');
+    } else {
+        alert('muted');
+        mute.classList.add('mute');
+    }
+});
+
+// Script to restart the game
+const restart = document.getElementById('restart');
+
+restart.addEventListener('click', (e) => {
+    alert('Restarted');
 });

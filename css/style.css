@@ -148,8 +148,7 @@ body {
     cursor: pointer;
 }
 
-.settingAndQuestions:active,
-.settingAndQuestionsPanel__exit:active {
+.settingAndQuestions:active {
     transform: scale(.9);
 }
 
