@@ -50,6 +50,9 @@ const backgroundMusic = new Audio('../audio/rockpaperscissors.mp3');
 
 // setOption()
 
+let userScore = 6;
+let cpuScore = 8;
+
 // Script to close and open the settings panel
 const openSettingAndQuestions = document.getElementById('openSettingAndQuestions');
 const settingsPanel = document.getElementById('settingsPanel');
@@ -89,7 +92,30 @@ mute.addEventListener('click', (e) => {
 
 // Script to restart the game
 const restart = document.getElementById('restart');
+const userScoreItem = document.getElementById('userScore');
+const cpuScoreItem = document.getElementById('cpuScore');
+const result = document.getElementById('result');
+const resultImg = document.getElementById('resultImg');
 
 restart.addEventListener('click', (e) => {
-    alert('Restarted');
+    userScoreItem.textContent = '0';
+    userScore = 0;
+    cpuScoreItem.textContent = '0';
+    cpuScore = 0;
+    resultImg.src = '../assets/doubts-button.png'; // Reset the image
+    resultImg.alt = 'Question mark Icon'; // Reset the alt text
+    result.classList.toggle('shadow');
+});
+
+// Script to open and close the icon's player selector
+const openPlayerIcons = document.getElementById('openPlayerIcons');
+const selection = document.getElementById('selection');
+const closeSelection = document.getElementById('closeSelection');
+
+openPlayerIcons.addEventListener('click', (e) => {
+    selection.classList.remove('hidden');
+});
+
+closeSelection.addEventListener('click', (e) => {
+    selection.classList.add('hidden');
 });
