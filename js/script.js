@@ -108,6 +108,7 @@ restart.addEventListener('click', (e) => {
     result.classList.toggle('shadow');
     playersImg.src = './assets/user.png'; // Reset the image of the user icon
     playersImg.alt = 'Default icon'; // Reset the alt text of the user icon
+    settingsPanel.classList.add('hidden'); // Hide the panel
 });
 
 // Script to open and close the icon's player selector
@@ -121,4 +122,15 @@ openPlayerIcons.addEventListener('click', (e) => {
 
 closeSelection.addEventListener('click', (e) => {
     selection.classList.add('hidden');
+});
+
+// Script to choose the icons of the profile
+const elements = Array.prototype.slice.call(document.getElementsByClassName('element__img'));
+
+elements.forEach((element) => {
+    element.addEventListener('click', (event) => { // Add a click event to each icon
+        playersImg.src= element.src;
+        playersImg.alt = element.alt;
+        selection.classList.add('hidden');
+    })
 });
