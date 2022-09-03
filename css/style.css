@@ -258,12 +258,14 @@ body {
 .settingAndQuestionsPanel__exit,
 .settingAndQuestionsPanel__element,
 .players--select,
-.selection__exit {
+.selection__exit,
+.element {
     cursor: pointer;
 }
 
 .settingAndQuestions:active,
-.players--select:active {
+.players--select:active,
+.element:active {
     transform: scale(.9);
 }
 
