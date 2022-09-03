@@ -96,15 +96,18 @@ const userScoreItem = document.getElementById('userScore');
 const cpuScoreItem = document.getElementById('cpuScore');
 const result = document.getElementById('result');
 const resultImg = document.getElementById('resultImg');
+const playersImg = document.getElementById('playersImg');
 
 restart.addEventListener('click', (e) => {
     userScoreItem.textContent = '0';
     userScore = 0;
     cpuScoreItem.textContent = '0';
     cpuScore = 0;
-    resultImg.src = '../assets/doubts-button.png'; // Reset the image
-    resultImg.alt = 'Question mark Icon'; // Reset the alt text
+    resultImg.src = '../assets/doubts-button.png'; // Reset the image of the result
+    resultImg.alt = 'Question mark Icon'; // Reset the alt text of the result 
     result.classList.toggle('shadow');
+    playersImg.src = './assets/user.png'; // Reset the image of the user icon
+    playersImg.alt = 'Default icon'; // Reset the alt text of the user icon
 });
 
 // Script to open and close the icon's player selector
