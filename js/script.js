@@ -135,4 +135,12 @@ elements.forEach((element) => {
     })
 });
 
-// Script to get the file when dop or upload file since the input button
+// Script to get the file when dop or upload file from the input button
+const selectionInput = document.getElementById('selectionInput');
+
+selectionInput.addEventListener('input', (e) => {
+    const splitedString =  selectionInput.value.split('\\');
+    playersImg.src= `../assets/${splitedString[2]}`;
+    playersImg.alt = 'User icon';
+    selection.classList.add('hidden');
+});
