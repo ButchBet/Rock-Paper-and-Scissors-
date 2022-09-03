@@ -134,3 +134,5 @@ elements.forEach((element) => {
         selection.classList.add('hidden');
     })
 });
+
+// Script to get the file when dop or upload file since the input button
