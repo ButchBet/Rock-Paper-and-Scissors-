@@ -23,7 +23,8 @@ body,
 .players,
 .selection,
 .selection__list,
-.selection__button {
+.selection__button,
+.choice {
     display: flex;
 }
 
@@ -55,7 +56,8 @@ body,
 }
 
 body,
-.selection__list {
+.selection__list,
+.choice {
     justify-content: space-evenly;
 }
 
@@ -64,7 +66,8 @@ body,
 .score,
 .players,
 .selection,
-.selection__button {
+.selection__button,
+.choice {
     align-items: center;
 }
 
@@ -112,7 +115,8 @@ body {
 .players__img,
 .element__icon,
 .element__img,
-.selection_input  {
+.selection_input,
+.choice__img  {
     width: 100%;
     height: 100%;
 }
@@ -141,8 +145,8 @@ body {
     padding: 8px 34px;
 }
 
-.score{
-    width: 270px;
+.score {
+    min-width: 270px;
     padding: 30px 0;
 }
 
@@ -163,12 +167,14 @@ body {
 
 .result,
 .players__figure,
-.element {
+.element,
+.choice__figure {
     width: 68px;
     height: 68px;
 }
 
-.players {
+.players,
+.choice {
     width: 270px;
     height: 100px;
 }
@@ -228,14 +234,17 @@ body {
 
 .score,
 .players,
-.selection__list {
-    background: var(--background0);
-    border-radius: 4px;
+.selection__list,
+.selection,
+.result,
+.choice {
+    background: var(--background1);
 }
 
 .score,
 .shadow,
-.players {
+.players,
+.choice {
     box-shadow: .3px 1.3px 1px black;
 }
 
@@ -243,17 +252,20 @@ body {
     color: white;
 }
 
-.result {
+.result,
+.choice {
     border-radius: 100%;
-    background: var(--background1);
-}
-
-.selection {
-    background: var(--background0);
 }
 
 .selection__button {
     color: dodgerblue;
+}
+
+.choice,
+.score,
+.players,
+.selection__list {
+    border-radius: 4px;
 }
 
 /* 5 */
@@ -262,13 +274,15 @@ body {
 .settingAndQuestionsPanel__element,
 .players--select,
 .selection__exit,
-.element {
+.element,
+.choice__figure {
     cursor: pointer;
 }
 
 .settingAndQuestions:active,
 .players--select:active,
-.element:active {
+.element:active,
+.choice__figure:active {
     transform: scale(.9);
 }
 
