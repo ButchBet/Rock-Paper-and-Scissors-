@@ -79,7 +79,7 @@
         
     </section>
     
-    <section class="selection" id="selection">
+    <section class="selection hidden" id="selection">
         <figure class="selection__exit" id="closeSelection">
             <img src="./assets/close.png" alt="Close 'X' icon" class="selection__img">
         </figure>
@@ -185,9 +185,23 @@
         <button class="selection__button">
             <p class="selection__text">Upload or frop file</p>
 
-            <input type="file" class="selection_input" id="selectionInput">
+            <input type="file" class="selection_input" accept="image/png, image/jpeg, image/jpg" id="selectionInput">
         </button>
     </section>
+
+    <selection class="choice">
+        <figure class="choice__figure">
+            <img alt="Paper icon" src="./assets/paper.png" class="choice__img" id="paper">
+        </figure>
+
+        <figure class="choice__figure">
+            <img alt="Rock icon" src="./assets/rock.png" class="choice__img" id="rock">
+        </figure>
+
+        <figure class="choice__figure">
+            <img alt="Scissors icon" src="./assets/scissors.png" class="choice__img" id="rock">
+        </figure>
+    </selection>
 </body>
 
 </html>

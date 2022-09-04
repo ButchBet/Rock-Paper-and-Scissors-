@@ -1,57 +1,11 @@
+// Script to validate the background sound
 const backgroundMusic = new Audio('../audio/rockpaperscissors.mp3');
 
-// Script to validate the background sound
+// Save the posible selections of the cpu
+const options = ['rock', 'paper', 'scissors']; 
+let userScore = 0; // Score of the user
+let cpuScore = 0; // Score of the cpu
 
-// const options = ['rock', 'paper', 'scissors']; 
-
-// function checkWiner(user = null, cpu = null) {
-//     if((user === options[0] && cpu === options[2]) || (user === options[1] && cpu === options[0]) || (user === options[2] && cpu === options[1])) {
-//         alert("You win!.");
-//     } else if((user === options[2] && cpu === options[0]) || (user === options[0] && cpu === options[1]) || (user === options[1] && cpu === options[2])) {
-//         alert("The cpu wins!.")
-//     } else {
-//         alert("Tie!");
-//     }
-// }
-
-// function setOption() {
-//     let stop = false; // Stop the main loop
-
-//     do {
-//         let user;
-//         // Get the index in order to get the option of the cpu
-//         let index = Math.floor(Math.random() * 3);
-//         // Set the option of the cpu
-//         let cpu = options[index];
-
-//         // Set the option of the user
-//         user = Number(prompt("Hello!, please choose your option: 0. rock, 1. paper and 2. scissors"));
-
-//         // Check that the input is correct
-//         if(user === 0 || user === 1 || user === 2) {
-//             user = options[user];
-            
-//             checkWiner(user, cpu);
-//         } else {
-//             alert("Please enter a valid option")
-//         }
-
-//         let option = Number(prompt("Would you like to continue?: 0. no and any other number. yes"));
-
-//         // change the value of stop
-//         if(option) {
-//             stop = false;
-//         } else {
-//             stop = true;
-//         }
-//     } while(!stop)
-
-// }
-
-// setOption()
-
-let userScore = 6;
-let cpuScore = 8;
 
 // Script to close and open the settings panel
 const openSettingAndQuestions = document.getElementById('openSettingAndQuestions');
@@ -103,9 +57,9 @@ restart.addEventListener('click', (e) => {
     userScore = 0;
     cpuScoreItem.textContent = '0';
     cpuScore = 0;
-    resultImg.src = '../assets/doubts-button.png'; // Reset the image of the result
+    resultImg.src = './assets/doubts-button.png'; // Reset the image of the result
     resultImg.alt = 'Question mark Icon'; // Reset the alt text of the result 
-    result.classList.toggle('shadow');
+    result.classList.remove('shadow');
     playersImg.src = './assets/user.png'; // Reset the image of the user icon
     playersImg.alt = 'Default icon'; // Reset the alt text of the user icon
     settingsPanel.classList.add('hidden'); // Hide the panel
@@ -140,7 +94,47 @@ const selectionInput = document.getElementById('selectionInput');
 
 selectionInput.addEventListener('input', (e) => {
     const splitedString =  selectionInput.value.split('\\');
-    playersImg.src= `../assets/${splitedString[2]}`;
+    playersImg.src= `./assets/${splitedString[2]}`;
     playersImg.alt = 'User icon';
     selection.classList.add('hidden');
 });
+
+
+// Script to catch the choice of the user
+const choises = Array.from(document.getElementsByClassName('choice__img'));
+
+choises.forEach((choice) => {
+    choice.addEventListener('click', (e) => {
+        result.classList.add('shadow');
+
+        let index = Math.floor(Math.random() * 3); // Get the index in order to get the option of the cpu
+        
+        let cpu = options[index]; // Set the option of the cpu
+
+        let user = choice.id;
+        
+        let imgUrl = checkWiner(user, cpu);
+
+        userScoreItem.textContent = userScore.toString(); // Set the result in the score panel
+        cpuScoreItem.textContent = cpuScore.toString();
+
+        resultImg.src = imgUrl;
+    })
+});
+
+
+function checkWiner(user = null, cpu = null) {
+    let result;
+
+    if((user === options[0] && cpu === options[2]) || (user === options[1] && cpu === options[0]) || (user === options[2] && cpu === options[1])) {
+        userScore++;
+        result = `./assets/${user}${cpu.charAt(0).toUpperCase() + cpu.slice(1)}.png`;
+    } else if((user === options[2] && cpu === options[0]) || (user === options[0] && cpu === options[1]) || (user === options[1] && cpu === options[2])) {
+        cpuScore++;
+        result = `./assets/${cpu}${user.charAt(0).toUpperCase() + user.slice(1)}.png`;
+    } else {
+        result = `./assets/${cpu}${user.charAt(0).toUpperCase() + user.slice(1)}.png`;
+    }
+
+    return result;
+}
