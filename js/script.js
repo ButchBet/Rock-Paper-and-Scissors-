@@ -124,15 +124,29 @@ choises.forEach((choice) => {
 
 
 function checkWiner(user = null, cpu = null) {
+    console.log(user, cpu)
     let result;
 
     if((user === options[0] && cpu === options[2]) || (user === options[1] && cpu === options[0]) || (user === options[2] && cpu === options[1])) {
+        /*
+            1. rock, scissors
+            2. paper, rock,
+            3. scissors, paper
+        */
+        console.log("User won")
         userScore++;
         result = `./assets/${user}${cpu.charAt(0).toUpperCase() + cpu.slice(1)}.png`;
     } else if((user === options[2] && cpu === options[0]) || (user === options[0] && cpu === options[1]) || (user === options[1] && cpu === options[2])) {
+        /*
+            1. scissors, rock
+            2. rock, paper,
+            3. paper, scissors
+        */
+        console.log("CPU won")
         cpuScore++;
-        result = `./assets/${cpu}${user.charAt(0).toUpperCase() + user.slice(1)}.png`;
+        result = `./assets/${user}${cpu.charAt(0).toUpperCase() + cpu.slice(1)}.png`;
     } else {
+        console.log("Whitedrawn")
         result = `./assets/${cpu}${user.charAt(0).toUpperCase() + user.slice(1)}.png`;
     }
 
