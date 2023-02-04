@@ -18,7 +18,7 @@ This is a solution to the [Project of the 12th and 13th class of the basic cours
 
 ### Links
 - Solution URL: [GitHub](https://github.com/ButchBet/Rock-Paper-and-Scissors-)
-- Live Site URL: [RPAS](https://butchbet.github.io/Rock-Paper-and-Scissors-)
+- Live Site URL: [RPAS](https://rpasbutchbet.netlify.app/)
 
 ### Built with
 - Semantic HTML5 markup
