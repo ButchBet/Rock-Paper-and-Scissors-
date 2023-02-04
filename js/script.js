@@ -89,14 +89,25 @@ elements.forEach((element) => {
     })
 });
 
-// Script to get the file when dop or upload file from the input button
+// Script to upload images in absolute paths
 const selectionInput = document.getElementById('selectionInput');
 
 selectionInput.addEventListener('input', (e) => {
-    const splitedString =  selectionInput.value.split('\\');
-    playersImg.src= `./assets/${splitedString[2]}`;
-    playersImg.alt = 'User icon';
-    selection.classList.add('hidden');
+    let file = e.target.files[0];
+
+    let reader = new FileReader();
+
+    reader.addEventListener("load", readerLoaded);
+
+    function readerLoaded(e) {
+        playersImg.src = e.target.result;
+
+        playersImg.alt = `${file.name} icon`;
+
+        selection.classList.add('hidden');
+    }
+
+    reader.readAsDataURL(file);
 });
 
 
@@ -133,7 +144,6 @@ function checkWiner(user = null, cpu = null) {
             2. paper, rock,
             3. scissors, paper
         */
-        console.log("User won")
         userScore++;
         result = `./assets/${user}${cpu.charAt(0).toUpperCase() + cpu.slice(1)}.png`;
     } else if((user === options[2] && cpu === options[0]) || (user === options[0] && cpu === options[1]) || (user === options[1] && cpu === options[2])) {
@@ -142,11 +152,9 @@ function checkWiner(user = null, cpu = null) {
             2. rock, paper,
             3. paper, scissors
         */
-        console.log("CPU won")
         cpuScore++;
         result = `./assets/${user}${cpu.charAt(0).toUpperCase() + cpu.slice(1)}.png`;
     } else {
-        console.log("Whitedrawn")
         result = `./assets/${cpu}${user.charAt(0).toUpperCase() + user.slice(1)}.png`;
     }
 
