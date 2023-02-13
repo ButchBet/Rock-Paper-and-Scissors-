@@ -15,7 +15,7 @@
 - Solution URL: [GitHub](https://github.com/ButchBet/Rock-Paper-and-Scissors-)
 - Live Site URL: [RPAS](https://rpasbutchbet.netlify.app/)
 
-### Built with
+## Built with
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
